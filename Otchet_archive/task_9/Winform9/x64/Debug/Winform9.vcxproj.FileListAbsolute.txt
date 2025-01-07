@@ -1,0 +1,4 @@
+C:\Users\Админ\source\repos\NIRTESTFINAL\Winform9\x64\Debug\Winform9.vcxproj.AssemblyReference.cache
+C:\Users\Админ\source\repos\NIRTESTFINAL\Winform9\x64\Debug\Winform9.MessageForm.resources
+C:\Users\Админ\source\repos\NIRTESTFINAL\Winform9\x64\Debug\Winform9.MyForm.resources
+C:\Users\Админ\source\repos\NIRTESTFINAL\Winform9\x64\Debug\Winform9.vcxproj.GenerateResource.cache

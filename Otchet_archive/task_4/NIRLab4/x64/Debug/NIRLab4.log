@@ -1,0 +1,9 @@
+﻿  MyForm.cpp
+C:\Users\Админ\source\repos\NirLab4otch\NIRLab4\MyForm.h(332,13): warning C4244: инициализация: преобразование "__int64" в "int", возможна потеря данных
+  (компиляция исходного файла "MyForm.cpp")
+  
+C:\Users\Админ\source\repos\NirLab4otch\NIRLab4\MyForm.h(345,21): warning C4244: инициализация: преобразование "double" в "__int64", возможна потеря данных
+  (компиляция исходного файла "MyForm.cpp")
+  
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  NIRLab4.vcxproj -> C:\Users\Админ\source\repos\NirLab4otch\x64\Debug\NIRLab4.exe

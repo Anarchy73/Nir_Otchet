@@ -1,0 +1,18 @@
+﻿  MyForm.cpp
+C:\Users\Админ\source\repos\NIRLab6\NIRlab6\MyForm.h(620,27): warning C4244: -=: преобразование "double" в "int", возможна потеря данных
+  (компиляция исходного файла "MyForm.cpp")
+  
+C:\Users\Админ\source\repos\NIRLab6\NIRlab6\MyForm.h(918,8): warning C4101: a: неиспользованная локальная переменная
+  (компиляция исходного файла "MyForm.cpp")
+  
+C:\Users\Админ\source\repos\NIRLab6\NIRlab6\MyForm.h(919,9): warning C4101: check: неиспользованная локальная переменная
+  (компиляция исходного файла "MyForm.cpp")
+  
+C:\Users\Админ\source\repos\NIRLab6\NIRlab6\MyForm.h(958,52): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+  (компиляция исходного файла "MyForm.cpp")
+  
+C:\Users\Админ\source\repos\NIRLab6\NIRlab6\MyForm.h(974,52): warning C4965: неявная упаковка целого числа 0; используйте nullptr или явное приведение типов
+  (компиляция исходного файла "MyForm.cpp")
+  
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  NIRlab6.vcxproj -> C:\Users\Админ\source\repos\NIRLab6\x64\Debug\NIRlab6.exe

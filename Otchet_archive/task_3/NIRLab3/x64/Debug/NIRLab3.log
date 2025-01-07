@@ -1,0 +1,6 @@
+﻿  MyForm.cpp
+C:\Users\Админ\source\repos\NIRLab3\NIRLab3\MyForm.h(164,19): warning C4101: A: неиспользованная локальная переменная
+  (компиляция исходного файла "MyForm.cpp")
+  
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  NIRLab3.vcxproj -> C:\Users\Админ\source\repos\NIRLab3\x64\Debug\NIRLab3.exe

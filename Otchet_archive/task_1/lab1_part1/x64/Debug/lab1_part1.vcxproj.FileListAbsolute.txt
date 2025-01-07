@@ -1,0 +1,4 @@
+C:\Users\Админ\source\repos\lab1_part1\lab1_part1\x64\Debug\lab1_part1.vcxproj.AssemblyReference.cache
+C:\Users\Админ\source\repos\lab1_part1\lab1_part1\x64\Debug\lab1part1.MyForm.resources
+C:\Users\Админ\source\repos\lab1_part1\lab1_part1\x64\Debug\lab1_part1.vcxproj.GenerateResource.cache
+C:\Users\Админ\source\repos\lab1_part1\lab1_part1\x64\Debug\lab1part1.exe

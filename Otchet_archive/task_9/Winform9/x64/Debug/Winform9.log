@@ -1,0 +1,13 @@
+﻿  MessageForm.cpp
+  MyForm.cpp
+C:\Users\Админ\source\repos\NIRTESTFINAL\MyForm.h(318,31): warning C4566: символ, представленный универсальным именем символа "\u2061", невозможно представить в текущей кодовой странице (1251)
+  (компиляция исходного файла "MyForm.cpp")
+  
+C:\Users\Админ\source\repos\NIRTESTFINAL\MyForm.h(329,14): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  (компиляция исходного файла "MyForm.cpp")
+  
+  Quest.cpp
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Создание кода...
+  MessageForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  Winform9.vcxproj -> C:\Users\Админ\source\repos\NIRTESTFINAL\x64\Debug\Winform9.exe

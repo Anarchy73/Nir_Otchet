@@ -1,0 +1,3 @@
+C:\Users\Админ\source\repos\NIRLab7\NIRLab7\x64\Debug\NIRLab7.vcxproj.AssemblyReference.cache
+C:\Users\Админ\source\repos\NIRLab7\NIRLab7\x64\Debug\NIRLab7.MyForm.resources
+C:\Users\Админ\source\repos\NIRLab7\NIRLab7\x64\Debug\NIRLab7.vcxproj.GenerateResource.cache
