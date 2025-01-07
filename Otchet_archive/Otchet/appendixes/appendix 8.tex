@@ -1,0 +1,45 @@
+\section{Фрагменты кода программы <<Работа с файлами>>}
+\label{app:files}
+
+
+Функция сохранения таблицы в файл
+\begin{minted}[style=bw,
+ linenos=true,
+ breaklines=true,
+ numbersep=5pt,
+ tabsize=2,
+ fontsize=\small,
+ bgcolor=white]{cpp}
+private: System::Void FileSaveFilter_Click(System::Object^ sender, System::EventArgs^ e) {
+	System::IO::Stream^ myStream;
+	if (this->saveFileDialog->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+		if ((myStream = saveFileDialog->OpenFile()) != nullptr) {
+			System::IO::StreamWriter^ sw =
+				gcnew System::IO::StreamWriter(myStream,
+					System::Text::Encoding::GetEncoding(65001));
+			for (int i = 0; i < this->FilteredTable->RowCount; i++) {
+
+				sw->Write(this->FilteredTable->Rows[i]->Cells[0]->Value);
+				sw->Write(" ");
+
+				sw->Write(this->FilteredTable->Rows[i]->Cells[1]->Value);
+				sw->Write(" ");
+
+				sw->Write(this->FilteredTable->Rows[i]->Cells[2]->Value);
+				sw->Write(" ");
+
+				sw->Write(this->FilteredTable->Rows[i]->Cells[3]->Value);
+				sw->Write(" ");
+
+				sw->Write(this->FilteredTable->Rows[i]->Cells[4]->Value);
+				sw->Write(" ");
+				sw->Write(this->FilteredTable->Rows[i]->Cells[5]->Value);
+				sw->Write(" ");
+				sw->Write(this->FilteredTable->Rows[i]->Cells[6]->Value);
+				if (i != this->FilteredTable->RowCount - 1)	sw->WriteLine();
+			}
+			sw->Close();
+		}
+	}
+}
+\end{minted}

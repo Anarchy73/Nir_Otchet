@@ -1,0 +1,42 @@
+\section{Фрагменты кода программы <<Рекурсивные вычисления>>}
+\label{app:recursive_calculations}
+
+
+Функция обработки нажатия на кнопку <<Вычислить>>.
+\begin{minted}[style=bw,
+ linenos=true,
+ breaklines=true,
+ numbersep=5pt,
+ tabsize=2,
+ fontsize=\small,
+ bgcolor=white]{cpp}
+private: System::Void Solve_Click(System::Object^ sender, System::EventArgs^ e) {
+	ClearAll();
+	long long n, m, A;
+	bool result_n = Int64::TryParse(this->n_input->Text, n);
+	bool result_m = Int64::TryParse(this->m_input->Text, m);
+	if (!result_n) {
+		errorProvider1->SetError(this->n_input, "Неправильно введено число n.");
+	}
+	if (!result_m) {
+		errorProvider1->SetError(this->m_input, "Неправильно введено число m.");
+	}
+	if (result_m && result_n) {
+
+		if (n > m) {
+			this->Output->Text = "Ошибка: n > m";
+		}
+		else {
+			if (n < 1) {
+				this->Output->Text = "" + "Ошибка: n < 1 "+ System::Environment::NewLine;
+			}
+			if (m < 1) {
+				this->Output->Text += "Ошибка: m < 1\n";
+			}
+			if (n >= 1 && m >= 1) {
+				this->Output->Text = "Количество различных размещений из n в m равно: " + System::Convert::ToString(per(n, m));
+			}
+		}
+	}
+}
+\end{minted}

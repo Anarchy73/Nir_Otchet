@@ -1,0 +1,40 @@
+\section{Фрагменты кода программы <<Простые вычисления>>}
+\label{app:simple_calculations}
+
+Функция, при нажатии на кнопку <<Вычислить>>.
+\begin{minted}[style=bw,
+ linenos=true,
+ breaklines=true,
+ numbersep=5pt,
+ tabsize=2,
+ fontsize=\small,
+ bgcolor=white]{cpp}
+private: System::Void solvebtn_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->output->Text = ""; // Стираем поле вывода
+
+	errors->SetError(x_input, String::Empty); // обнуляем ошибки
+	errors->SetError(y_input, String::Empty);
+
+	Int64 x, y; // Переменные для считывания полей ввода
+	double result; // переменная для записи результата
+
+	bool result_x = Int64::TryParse(this->x_input->Text, x); // записываем из полей ввода в соответствующие переменные
+	bool result_y = Int64::TryParse(this->y_input->Text, y); // и проверяем на успешность выполнения парсинга
+
+	if (!result_x) { // если неудачно
+		errors->SetError(x_input, "Введено не целое число");
+	}
+	if (!result_y) {
+		errors->SetError(y_input, "Введено не целое число");
+	}
+	if (result_x && result_y) { // если удачно
+		if (x * x - y == 0) { // проверка на ОДЗ
+			this->output->Text = "Деление на ноль";
+		}
+		else {
+			result = (1.0) * ((x + y) * (x + y) - x * x * x) / (std::abs(x * x - y)); //Считаем
+			this->output->Text = System::Convert::ToString(result); //Записываем результат
+		}
+	}
+}
+\end{minted}

@@ -1,0 +1,49 @@
+\section{Фрагменты кода программы <<Приложение тест>>}
+\label{app:test}
+
+Функция при клике на кнопку "Продолжить"
+\begin{minted}[style=bw,
+ linenos=true,
+ breaklines=true,
+ numbersep=5pt,
+ tabsize=2,
+ fontsize=\small,
+ bgcolor=white]{cpp}
+System::Void act_Click(System::Object^ sender, System::EventArgs^ e) {
+	errorProvider1->Clear();
+	std::string answer = "";
+	if (iter != Questions->size()) {
+		answer = ReadAnswer();
+	}
+	// если ответ правильного формата
+	if (answer != "") {
+		int i = RandIndex->at(iter);
+		int flag = 0;
+		// проверка ответа
+		if (Questions->at(i).getRightAnswer() == answer) {
+			// выставление баллов за ответ
+			Questions->at(i).setResult(1);
+			flag = 1;
+		}
+		else {
+			// выставление баллов за ответ
+			Questions->at(i).setResult(0);
+		}
+		MessageForm^ msgForm = gcnew MessageForm();
+		msgForm->setFlag(flag);
+		msgForm->ShowDialog();
+		iter++;
+		if (iter != Questions->size()) {
+			countBox->Text = Convert::ToString(iter + 1);
+			ChooseForm();
+			int i = RandIndex->at(iter);
+			questBox->Text = gcnew String(Questions->at(i).getText().c_str());
+		}
+		else {
+			msgForm->result(CalcResult());
+			msgForm->setFlag(-1);
+			msgForm->ShowDialog();
+		}
+	}
+}
+\end{minted}

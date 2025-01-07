@@ -1,0 +1,44 @@
+\section{Фрагменты кода программы <<Матричный калькулятор>>}
+\label{app:matrix}
+
+Функция установки размера матрицы B
+\begin{minted}[style=bw,
+ linenos=true,
+ breaklines=true,
+ numbersep=5pt,
+ tabsize=2,
+ fontsize=\small,
+ bgcolor=white]{cpp}
+private: System::Void set_size_B_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->errorProvider1->Clear();
+	int n, m;
+	bool resn = Int32::TryParse(this->set_size_B_lines->Text, n);
+	bool resm = Int32::TryParse(this->set_size_B_columns->Text, m);
+	if (!(resn && resm)) {
+		this->errorProvider1->SetError(this->input_B, "Неправильный формат ввода размера таблицы");
+		return;
+	}
+	else if (n <= 0 || m <= 0) {
+		this->errorProvider1->SetError(this->input_B, "Нельзя задать размер с 0");
+		return;
+	}
+
+
+	int line_count = this->input_B->RowCount;
+
+	for (int i = 0; i < line_count; i++) {
+		this->input_B->Rows->Remove(this->input_B->Rows[0]);
+	}
+	int column_count = this->input_B->ColumnCount;
+	for (int i = 0; i < column_count; i++) {
+		this->input_B->Columns->Remove(this->input_B->Columns[0]);
+	}
+
+
+	for (int i = 0; i < m; i++) {
+		this->input_B->Columns->Add("", "");
+	}
+
+	this->input_B->Rows->Add(n);
+}
+\end{minted}

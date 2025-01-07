@@ -1,0 +1,34 @@
+\section{Фрагменты кода программы <<Использование коллекций в Windows Forms>>}
+\label{app:collections}
+
+Функция нахождения максимального нечетного элемента стека.
+\begin{minted}[style=bw,
+ linenos=true,
+ breaklines=true,
+ numbersep=5pt,
+ tabsize=2,
+ fontsize=\small,
+ bgcolor=white]{cpp}
+private: System::Void max_nech_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+	System::Collections::Generic::Stack<int> buf; //вспомогательный стек
+	int maxel = -1e9;
+	bool nech = false;
+	while (s.Count) {//пока стек не пуст
+		if (maxel < s.Peek() && s.Peek() % 2 != 0) {
+			maxel = s.Peek();
+			nech = true;
+		} 
+		buf.Push(s.Peek()); //записываем во вспомогательный стек первый элемент
+		s.Pop(); //удаляем первый элемент из стека
+
+
+	}
+	while (buf.Count) { //пока вспомогательный стек не пуст
+		s.Push(buf.Peek()); //записываем в основный стек первый элемент вспомогательного
+		buf.Pop(); //удаляем из стека первый элемент
+	}
+	if (nech) this->max_nech->Text = System::Convert::ToString(maxel); //записываем результат в строку
+	else this->max_nech->Text = "Стек не содержит четных элементов";
+}
+\end{minted}
+

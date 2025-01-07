@@ -1,0 +1,47 @@
+\section{Фрагменты кода программы <<Обработка табличных данных. Часть 1>>}
+\label{app:table_data}
+
+Функция обработки нажатия на кнопку "Минимум"
+\begin{minted}[style=bw,
+ linenos=true,
+ breaklines=true,
+ numbersep=5pt,
+ tabsize=2,
+ fontsize=\small,
+ bgcolor=white]{cpp}
+private: System::Void min_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+	long long y, maxel = 1e9;
+	bool found_chet = false;
+	for (int i = 0; i < this->mas_grid->RowCount; i++) {
+		bool result = Int64::TryParse(this->mas_grid->Rows[i]->Cells[0]->Value->ToString(), y);
+		if (y % 2 == 0) {
+			found_chet = true;
+			maxel = (y < maxel) ? y : maxel;
+		}
+	}
+	if (found_chet)	this->chet_box->Text = System::Convert::ToString(maxel);
+	else {
+		this->chet_box->Text = "Четных чисел нет";
+	}
+}
+\end{minted}
+Функция добавления числа в таблицу
+\begin{minted}[style=bw,
+ linenos=true,
+ breaklines=true,
+ numbersep=5pt,
+ tabsize=2,
+ fontsize=\small,
+ bgcolor=white]{cpp}
+private: System::Void mas_add_Click(System::Object^ sender, System::EventArgs^ e) {
+	long long x;
+	bool result = Int64::TryParse(this->x_input->Text, x);
+	if (!result) {
+		this->errorProvider1->SetError(this->mas_add, "Ошибка формата ввода");
+		return;
+	}
+	this->mas_grid->Rows->Add(1);
+	this->mas_grid->Rows[this->mas_grid->RowCount - 1]->SetValues(x);
+
+}
+\end{minted}
